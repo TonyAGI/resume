@@ -4,380 +4,369 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Tony Oganda - Modern Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="Query.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Tony Oganda</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-bubbles">
+        <div class="loading-bubble"></div>
+        <div class="loading-bubble"></div>
+        <div class="loading-bubble"></div>
+      </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Bubble Background -->
+    <div class="bubble-background">
+      <div class="floating-bubble bubble-1"></div>
+      <div class="floating-bubble bubble-2"></div>
+      <div class="floating-bubble bubble-3"></div>
+      <div class="floating-bubble bubble-4"></div>
+      <div class="floating-bubble bubble-5"></div>
+      <div class="floating-bubble bubble-6"></div>
+      <div class="floating-bubble bubble-7"></div>
+      <div class="floating-bubble bubble-8"></div>
+      <div class="ambient-bubble ambient-1"></div>
+      <div class="ambient-bubble ambient-2"></div>
+      <div class="ambient-bubble ambient-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+      <div class="nav-content">
+        <div class="logo">TO</div>
+        <ul class="nav-links desktop-nav">
+          <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#experience" class="nav-link" data-section="experience">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+      <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+          <li><a href="#hero" class="nav-link" data-section="hero">Home</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#experience" class="nav-link" data-section="experience">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">John Doe</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="about-pic.png" alt="Tony Oganda profile picture"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Tony Oganda</h1>
-        <p class="section__text__p2">Fullstack Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('resume-example.pdf')"
-          >
-            Resume
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/tony-oganda-38a9b025b'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/TonyAGI'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text animate-on-scroll">
+            <p class="greeting">Hello, I'm</p>
+            <h1 class="hero-name">Tony Oganda</h1>
+            <p class="hero-title">Fullstack Developer</p>
+            <div class="hero-buttons">
+              <button class="bubble-btn" onclick="window.open('resume-example.pdf')">
+                Download Resume
+              </button>
             </div>
-            <div class="details-container">
-              <img
-                src="education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degreee</p>
-              <p>2024-2027</p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/tony-oganda-38a9b025b" target="_blank" class="social-bubble">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://github.com/TonyAGI" target="_blank" class="social-bubble">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
             </div>
           </div>
-          <div class="text-container">
-            <p>
-              From the magic of Google search to the nerve-racking loading screen, technology became exciting to me. With technology shown to improve year by year, new inventions from the internet to artificial intelligence have changed the way our society interacts globally. A change in components smaller than ants can alter how efficient our devices work.
+          <div class="hero-image animate-on-scroll">
+            <div class="profile-wrapper">
+              <img src="about-pic.png" alt="Tony Oganda" class="profile-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Get To Know More</p>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image animate-on-scroll">
+            <div class="about-image-wrapper">
+              <img src="about-pic.png" alt="Tony Oganda" class="about-pic" />
+            </div>
+          </div>
+          <div class="about-text">
+            <div class="stats-grid animate-on-scroll">
+              <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <h3>Experience</h3>
+                <p>2+ years<br />Frontend Development</p>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <h3>Education</h3>
+                <p>B.Sc. Bachelors Degree<br />2024-2027</p>
+              </div>
+            </div>
+            <div class="text-card animate-on-scroll">
+              <p>
+                From</p> the magic of Google search to the nerve-racking loading screen, technology became exciting to me. With technology shown to improve year by year, new inventions from the internet to artificial intelligence have changed the way our society interacts globally. A change in components smaller than ants can alter how efficient our devices work.
               </p>
-              <p> Computer Science is about how far circuits and programming go before they can be efficient enough to power our universe. 
-              My life has changed with this invention, often struggling in multiple subjects without an opportunity for tutoring. Having the internet made me learn of educational websites like Khan Academy, a free non-profit organization aimed at decentralizing learning. Through the internet, I was able to learn tips and tricks from how to shade colors, to learning derivation and integration. </p>
-              <p>Throughout the process, I learned how important critical thinking and leadership skills are to me.
-             My interest in technology has grown with me with time. As I continue to learn and explore the field of engineering, I am constantly reminded of the endless possibilities technology provides. With Computer Science, I am determined to use my mathematical skills to make a positive impact on society. And I am confident that with hard work and dedication, I can achieve it one day. </p>
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="checkmark.png"
-                  atl="Experience icon"
-                  class="icon"
-                  />
-                  <div>
-                    <h3>Python</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>C++</h3>
-                    <p>Experienced</p>
-                  </div>
-                </article>  
-                <article>
-                  <img
-                    src="checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>Java</h3>
-                    <p>Experienced</p>
-                  </div>
-                  <img
-                  src="checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C</h3>
-                  <p>Experienced</p>
-                </article>
+              <p>
+                Computer Science is about how far circuits and programming go before they can be efficient enough to power our universe. My life has changed with this invention, often struggling in multiple subjects without an opportunity for tutoring. Having the internet made me learn of educational websites like Khan Academy, a free non-profit organization aimed at decentralizing learning. Through the internet, I was able to learn tips and tricks from how to shade colors, to learning derivation and integration.
+              </p>
+              <p>
+                Throughout the process, I learned how important critical thinking and leadership skills are to me. My interest in technology has grown with me with time. As I continue to learn and explore the field of engineering, I am constantly reminded of the endless possibilities technology provides. With Computer Science, I am determined to use my mathematical skills to make a positive impact on society. And I am confident that with hard work and dedication, I can achieve it one day.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#projects'"
-      />
     </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Space Invaders</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/TonyAGI/Space-Invaders'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Personal Website</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/TonyAGI/resume'"
-              >
-                Github
-              </button>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Explore My</p>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category animate-on-scroll">
+            <h3 class="category-title">Frontend Development</h3>
+            <div class="skills-container">
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">H</div>
+                <h4>HTML</h4>
+                <p class="skill-level">Experienced</p>
+              </div>
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">C</div>
+                <h4>CSS</h4>
+                <p class="skill-level">Experienced</p>
+              </div>
+              <div class="skill-bubble basic">
+                <div class="skill-icon">JS</div>
+                <h4>JavaScript</h4>
+                <p class="skill-level">Basic</p>
+              </div>
+              <div class="skill-bubble basic">
+                <div class="skill-icon">TS</div>
+                <h4>TypeScript</h4>
+                <p class="skill-level">Basic</p>
+              </div>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="project-3.png"
-                alt= ""
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Ray Tracing</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/TonyAGI/RayTracer'"
-              >
-                Github
-              </button>
+          <div class="skill-category animate-on-scroll">
+            <h3 class="category-title">Backend Development</h3>
+            <div class="skills-container">
+              <div class="skill-bubble basic">
+                <div class="skill-icon">PG</div>
+                <h4>PostgreSQL</h4>
+                <p class="skill-level">Basic</p>
+              </div>
+              <div class="skill-bubble intermediate">
+                <div class="skill-icon">N</div>
+                <h4>Node JS</h4>
+                <p class="skill-level">Intermediate</p>
+              </div>
+              <div class="skill-bubble intermediate">
+                <div class="skill-icon">E</div>
+                <h4>Express JS</h4>
+                <p class="skill-level">Intermediate</p>
+              </div>
+              <div class="skill-bubble intermediate">
+                <div class="skill-icon">G</div>
+                <h4>Git</h4>
+                <p class="skill-level">Intermediate</p>
+              </div>
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">PY</div>
+                <h4>Python</h4>
+                <p class="skill-level">Experienced</p>
+              </div>
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">C++</div>
+                <h4>C++</h4>
+                <p class="skill-level">Experienced</p>
+              </div>
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">J</div>
+                <h4>Java</h4>
+                <p class="skill-level">Experienced</p>
+              </div>
+              <div class="skill-bubble experienced">
+                <div class="skill-icon">C</div>
+                <h4>C</h4>
+                <p class="skill-level">Experienced</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#contact'"
-      />
     </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:tonyoganda9@gmail.com">tonyoganda9@gmail.com</a></p>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Browse My Recent</p>
+          <h2 class="section-title">Projects</h2>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href='https://linkedin.com/in/tony-oganda-38a9b025b'>LinkedIn</a></p>
+        <div class="projects-grid">
+          <div class="project-card animate-on-scroll">
+            <div class="project-image">
+              <img src="project-1.png" alt="Space Invaders" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Space Invaders</h3>
+              <div class="tech-stack">
+                <span class="tech-bubble">JavaScript</span>
+                <span class="tech-bubble">HTML5</span>
+                <span class="tech-bubble">CSS3</span>
+                <span class="tech-bubble">Canvas</span>
+              </div>
+              <p class="project-description">
+                A classic arcade-style space invaders game built with modern web technologies. Features smooth animations, collision detection, and progressive difficulty levels.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/TonyAGI/Space-Invaders" target="_blank" class="project-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card animate-on-scroll">
+            <div class="project-image">
+              <img src="project-2.png" alt="Personal Website" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Personal Website</h3>
+              <div class="tech-stack">
+                <span class="tech-bubble">HTML</span>
+                <span class="tech-bubble">CSS</span>
+                <span class="tech-bubble">JavaScript</span>
+                <span class="tech-bubble">Responsive</span>
+              </div>
+              <p class="project-description">
+                A responsive portfolio website showcasing my projects and skills. Built with modern web technologies and optimized for performance across all devices.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/TonyAGI/resume" target="_blank" class="project-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card animate-on-scroll">
+            <div class="project-image">
+              <img src="project-3.png" alt="Ray Tracing" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Ray Tracing</h3>
+              <div class="tech-stack">
+                <span class="tech-bubble">C++</span>
+                <span class="tech-bubble">Mathematics</span>
+                <span class="tech-bubble">Graphics</span>
+                <span class="tech-bubble">Algorithms</span>
+              </div>
+              <p class="project-description">
+                An advanced ray tracing renderer that creates photorealistic images through accurate light simulation. Implements various rendering techniques and optimizations.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/TonyAGI/RayTracer" target="_blank" class="project-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <p class="section-subtitle">Get in Touch</p>
+          <h2 class="section-title">Contact Me</h2>
         </div>
-      </nav>
-      <p>Copyright &#169; 2025 Tony Oganda. All Rights Reserved.</p>
-    </footer>
-    <script src="code.js"></script>
+        <div class="contact-grid">
+          <div class="contact-card animate-on-scroll" onclick="window.open('mailto:tonyoganda9@gmail.com')">
+            <div class="contact-icon email-gradient">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+              </svg>
+            </div>
+            <h3>Email</h3>
+            <a href="mailto:tonyoganda9@gmail.com">tonyoganda9@gmail.com</a>
+          </div>
+          <div class="contact-card animate-on-scroll" onclick="window.open('https://linkedin.com/in/tony-oganda-38a9b025b', '_blank')">
+            <div class="contact-icon linkedin-gradient">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <h3>LinkedIn</h3>
+            <a href="https://linkedin.com/in/tony-oganda-38a9b025b" target="_blank">Connect with me</a>
+          </div>
+        </div>
+        <div class="social-footer animate-on-scroll">
+          <a href="https://github.com/TonyAGI" target="_blank" class="social-bubble">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/tony-oganda-38a9b025b" target="_blank" class="social-bubble">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer animate-on-scroll">
+          <p>Copyright © 2025 Tony Oganda. All Rights Reserved.</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
